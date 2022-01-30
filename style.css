@@ -1,0 +1,24 @@
+html, body, #map{
+  height: 100%;
+  margin: 0;
+}
+
+#text{
+  font-family: 'helvetica neue', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.25rem;
+  z-index: 999 !important;
+  position: fixed;
+  width: 25%;
+  top:0;
+  right:0;
+  padding:10px;
+}
+
+#text p{
+  margin: 20px;
+}
+#text h1, #text h2, #text h3{
+  margin: 20px;
+  font-weight: normal;
+}
