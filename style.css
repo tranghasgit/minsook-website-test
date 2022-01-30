@@ -1,22 +1,28 @@
 html, body, #map{
   height: 100%;
   margin: 0;
+  background-color: black;
+  background-image: url("imgs/img-4.jpg");
+  background-position: right 2em bottom 2em;
+  background-repeat: no-repeat;
 }
 
 #text{
-  font-family: 'helvetica neue', sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.25rem;
   z-index: 999 !important;
   position: fixed;
   width: 25%;
   top:0;
-  right:0;
+  right:10px;
   padding:10px;
+
+  font-family: 'helvetica neue', sans-serif;
+  font-size: 1.2rem;
+  color: white;
 }
 
 #text p{
   margin: 20px;
+  line-height: 1.25rem;
 }
 #text h1, #text h2, #text h3{
   margin: 20px;
