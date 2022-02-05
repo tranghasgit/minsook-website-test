@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 
   // ADD CUSOTM BASE LAYER-----------------------------------------------
-  var map, map1, stanfordMlk, stanfordMlk1;
+  var map, map1, stanfordMlk;
 
   map = L.map('map', {
     center: [0, 0],
@@ -15,9 +15,7 @@ $(document).ready(function(){
     zoom: 0
   });
 
-  // stanfordMlk = L.tileLayer.iiif('http://127.0.0.1:8182/iiif/2/img-5.jpg/info.json', {
-  //   // attribution: '<a href="http://searchworks.stanford.edu/view/hg676jb4964">Martin Luther King Jr. & Joan Baez march to integrate schools, Grenada, MS, 1966</a>'
-  // }).addTo(map);
+  stanfordMlk = L.tileLayer.iiif('http://free.iiifhosting.com/iiif/5aa293f052ebc1cbc314ca307e35a044fcec478cc148eaa7c7fd2c0823c19df/info.json', {}).addTo(map);
 
   // ADD CONTROLS
   // iiifLayers = {
