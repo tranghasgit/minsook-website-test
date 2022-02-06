@@ -2,14 +2,47 @@ html, body, #map{
   height: 100%;
   margin: 0;
   background-color: rgb(112, 112, 112);
-  background-image: url("imgs/img-4.jpg");
+  background-image: url("imgs/bg/img-0.jpg");
   /* background-image: url("imgs/bg/img-0.jpg"); */
-  background-position: right 2rem bottom 2rem;
-  /* background-size: cover; */
+  /* background-position: right 2rem bottom 2rem; */
+  background-position: center;
+  background-size: 50%;
   background-repeat: no-repeat;
 }
 
-#text{
+.menu{
+  z-index: 999 !important;
+  position: fixed;
+  width: 656px;
+  top:2rem;
+  left:4rem;
+
+  font-family: 'helvetica neue', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+}
+  .menu ul{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+  }
+    .menu ul li:hover{
+      cursor: pointer;
+      font-style: italic;
+    }
+
+    .menu ul ul{
+      display: none;
+      margin: 1rem 1.5rem 1rem 1.5rem;
+      font-size: 1.1rem;
+    }
+      .menu ul ul li{
+        display: block;
+        font-style: normal;
+      }
+
+.text{
   z-index: 999 !important;
   position: fixed;
   width: 656px;
@@ -17,15 +50,48 @@ html, body, #map{
   right:2rem;
 
   font-family: 'helvetica neue', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: white;
 }
 
-#text p{
-  margin: 1rem;
-  line-height: 1.25rem;
+  .text p{
+    margin: 1rem;
+    line-height: 1.3rem;
+  }
+  .text h1, .text h2, .text h3{
+    margin: 1rem;
+    font-weight: normal;
+  }
+
+
+
+/* config map ele */
+.marker-scroll{
+  background-color: rgb(212, 193, 144);
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
-#text h1, #text h2, #text h3{
-  margin: 1rem;
-  font-weight: normal;
+.marker-scroll::-webkit-scrollbar {
+  display: none;
 }
+.marker-scroll .img-wrapper{
+  width: 100%;
+}
+
+  .marker-scroll img{
+    width: 100%;
+  }
+  .marker-scroll .pls-scroll{
+    position: absolute;
+    top:0;
+    right:0;
+    margin: 1rem;
+  }
+  .marker-scroll p{
+    font-family: 'helvetica neue', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    margin: 1rem 1.5rem 5rem 1.5rem;
+    hyphens: auto;
+  }

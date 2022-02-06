@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   // var map = L.map('map').setView([51.636, 4.238009], 16);
   //
   // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -7,15 +8,19 @@ $(document).ready(function(){
 
 
   // ADD CUSOTM BASE LAYER-----------------------------------------------
-  var map, map1, stanfordMlk;
+  var map, stanfordMlk, myIcon;
 
   map = L.map('map', {
     center: [0, 0],
     crs: L.CRS.Simple,
-    zoom: 0
+    zoom: 0,
+    center: [0,-70],
+    zoomControl: false,
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
   });
 
-  stanfordMlk = L.tileLayer.iiif('http://free.iiifhosting.com/iiif/5aa293f052ebc1cbc314ca307e35a044fcec478cc148eaa7c7fd2c0823c19df/info.json', {}).addTo(map);
+  // stanfordMlk = L.tileLayer.iiif('http://free.iiifhosting.com/iiif/5aa293f052ebc1cbc314ca307e35a044fcec478cc148eaa7c7fd2c0823c19df/info.json', {}).addTo(map);
 
   // ADD CONTROLS
   // iiifLayers = {
@@ -26,19 +31,45 @@ $(document).ready(function(){
   // ADD MARKERS-----------------------------------------------
   var LeafIcon = L.Icon.extend({
       options: {
-          // shadowUrl: 'leaf-shadow.png',
-          iconSize:     [328, 492], // size of the icon
+          shadowUrl: 'icon/img-shadow.png',
+          // iconSize:     [328, 492], // size of the icon
           // shadowSize:   [50, 64],
           // iconAnchor:   [22, 94],
           // shadowAnchor: [4, 62],
       }
   });
 
-  var greenIcon = new LeafIcon({iconUrl: 'imgs/img-1.jpg', iconAnchor:[350,0], popupAnchor:  [-185, 584]}),
-      redIcon = new LeafIcon({iconUrl: 'imgs/img-3.jpg', iconAnchor:[700,0], popupAnchor:  [-535, 584]});
+  var cIcon = new LeafIcon({iconUrl: 'icon/img-1.png', iconAnchor:[0,0], popupAnchor:  [255, 20], className: 'cIcon'}),
+      mIcon = new LeafIcon({iconUrl: 'icon/img-2.png', iconAnchor:[450,0], popupAnchor:  [-193, 32], className: 'mIcon'}),
+      yIcon = new LeafIcon({iconUrl: 'icon/img-3.png', iconAnchor:[900,0], popupAnchor:  [-642, 20], className: 'yIcon'}),
+      kIcon = new LeafIcon({iconUrl: 'icon/img-4.png', iconAnchor:[1350,0], popupAnchor:  [-1095, 50], className: 'kIcon'}),
+      myIcon = new L.divIcon({className: 'marker-scroll', iconAnchor:[-520, -5], iconSize:[418, 582], className: 'myIcon'});
 
-  L.marker([0, 0], {icon: greenIcon}).addTo(map).bindPopup("1. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
-  L.marker([0, 0], {icon: redIcon}).addTo(map).bindPopup("2. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  L.marker([0, 0], {icon: cIcon}).addTo(map).bindPopup("1. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  L.marker([0, 0], {icon: mIcon}).addTo(map).bindPopup("2. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  L.marker([0, 0], {icon: yIcon}).addTo(map).bindPopup("3. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  L.marker([0, 0], {icon: kIcon}).addTo(map).bindPopup("4. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  L.marker([0, 0], {icon: myIcon}).addTo(map);
 
+
+  $('.marker-scroll').append("<div class='img-wrapper'><img src='imgs/xmas-1/img-5.jpg'/><div class='pls-scroll'>scroll down ↓</div></div>").append("<p>The Promise of Ruin(s) tackles the concept of ruin(s)—as both a material relic and an intangible construct of the mind—into their diverse specificity, giving space to relational proposals and overlapping temporalities. Each of the three upcoming chapters echoes the ruin in its multiplicity, from the reading of modernity, to the speculative discrepancy of decay and precariousness of turbo-capitalism. <br> <br> This program is set to unfold at The Balcony over the course of the upcoming year. Each chapter is articulated as a trio exhibition. The aim is to bind established artists, with mid-career and recently graduated practitioners from the field.</>");
+
+
+  // menu items
+  $(".menu ul li:nth-child(2)").click(function(){
+    $(this).find('ul').show();
+  });
+
+  cIcon.click(function(e){
+    map.flyTo(e.latlng);
+    //unbind and off is to remove the existing click events
+    // console.log(e);
+    // console.log($('.cIcon').html());
+    // console.log($(e).html());
+        // var lat = cIcon.getLatLng().lat;
+        // var lng = cIcon.getLatLng().lng;
+        //
+        // map.flyTo([lat,lng]);
+  });
 
 });
