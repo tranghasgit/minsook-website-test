@@ -8,6 +8,7 @@ html, body, #map{
   background-position: center;
   background-size: 50%;
   background-repeat: no-repeat;
+
 }
 
 .menu{
@@ -45,17 +46,25 @@ html, body, #map{
 .text{
   z-index: 999 !important;
   position: fixed;
-  width: 656px;
+  width: 30%;
   top:2rem;
-  /* bottom: 2rem; */
+  bottom: 2rem;
   right:2rem;
+  /* background-color: rgba(255, 255, 255); */
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  pointer-events:  none;
 
   font-family: 'helvetica neue', sans-serif;
   font-size: 1.1rem;
   color: white;
 }
+.text::-webkit-scrollbar {
+  display: none;
+}
 .bgColorHl{
-  border: 10px dotted pink;
+  border: 10px dotted rgb(178, 71, 232);
 }
 
   .text p{
@@ -67,7 +76,7 @@ html, body, #map{
     font-weight: normal;
   }
   .text p:nth-child(3), .text p:nth-child(4), .text p:nth-child(5), .text p:nth-child(6), .text p:nth-child(7){
-    color: rgb(154, 255, 222);
+    color: black;
   }
 
 
@@ -78,6 +87,7 @@ html, body, #map{
   overflow-y: scroll;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+
 }
 .myIcon::-webkit-scrollbar {
   display: none;
@@ -107,6 +117,14 @@ html, body, #map{
 /* thistextbox */
 
 .thisTxtbox, .thisToSee{
-  color: lightpink;
+  color: white;
   cursor: pointer;
+  pointer-events:  auto;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .text{
+    font-size: 1rem;
+  }
 }
