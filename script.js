@@ -43,16 +43,34 @@ $(document).ready(function(){
       mIcon = new LeafIcon({iconUrl: 'icon/img-2.png', iconAnchor:[450,0], popupAnchor:  [-193, 32], className: 'mIcon'}),
       yIcon = new LeafIcon({iconUrl: 'icon/img-3.png', iconAnchor:[900,0], popupAnchor:  [-642, 20], className: 'yIcon'}),
       kIcon = new LeafIcon({iconUrl: 'icon/img-4.png', iconAnchor:[1350,0], popupAnchor:  [-1095, 50], className: 'kIcon'}),
-      myIcon = new L.divIcon({className: 'marker-scroll', iconAnchor:[-520, -5], iconSize:[418, 582], className: 'myIcon'});
+      myIcon = new L.divIcon({iconAnchor:[-520, -5], iconSize:[418, 582], className: 'myIcon'});
 
-  L.marker([0, 0], {icon: cIcon}).addTo(map).bindPopup("1. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
-  L.marker([0, 0], {icon: mIcon}).addTo(map).bindPopup("2. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
-  L.marker([0, 0], {icon: yIcon}).addTo(map).bindPopup("3. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
-  L.marker([0, 0], {icon: kIcon}).addTo(map).bindPopup("4. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
-  L.marker([0, 0], {icon: myIcon}).addTo(map);
+  var cMarker = L.marker([25, 0], {icon: cIcon}),
+      mMarker = L.marker([1000, -850], {icon: mIcon}),
+      yMarker = L.marker([-500, 0], {icon: yIcon}),
+      kMarker = L.marker([250, 380], {icon: kIcon}),
+      myMarker = L.marker([0, 450], {icon: myIcon});
 
+  cMarker.addTo(map).bindPopup("1. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  mMarker.addTo(map).bindPopup("2. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  yMarker.addTo(map).bindPopup("3. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  kMarker.addTo(map).bindPopup("4. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  myMarker.addTo(map);
 
-  $('.marker-scroll').append("<div class='img-wrapper'><img src='imgs/xmas-1/img-5.jpg'/><div class='pls-scroll'>scroll down ↓</div></div>").append("<p>The Promise of Ruin(s) tackles the concept of ruin(s)—as both a material relic and an intangible construct of the mind—into their diverse specificity, giving space to relational proposals and overlapping temporalities. Each of the three upcoming chapters echoes the ruin in its multiplicity, from the reading of modernity, to the speculative discrepancy of decay and precariousness of turbo-capitalism. <br> <br> This program is set to unfold at The Balcony over the course of the upcoming year. Each chapter is articulated as a trio exhibition. The aim is to bind established artists, with mid-career and recently graduated practitioners from the field.</>");
+  // L.marker([25, 0], {icon: cIcon}).addTo(map).bindPopup("1. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  // L.marker([1000, -850], {icon: mIcon}).addTo(map).bindPopup("2. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  // L.marker([-500, 0], {icon: yIcon}).addTo(map).bindPopup("3. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  // L.marker([250, 180], {icon: kIcon}).addTo(map).bindPopup("4. Image Exhibition The Christmas Tree Island. 2022. The Hague.");
+  // L.marker([0, 450], {icon: myIcon}).addTo(map);
+  //
+
+  var cMarkerll = cMarker.getLatLng();
+  var mMarkerll = mMarker.getLatLng();
+  var yMarkerll = yMarker.getLatLng();
+  var kMarkerll = kMarker.getLatLng();
+  var myMarkerll = myMarker.getLatLng();
+
+  $('.myIcon').append("<div class='img-wrapper'><img src='imgs/xmas-1/img-5.jpg'/><div class='pls-scroll'>scroll down ↓</div></div>").append("<p>The Promise of Ruin(s) tackles the concept of ruin(s)—as both a material relic and an intangible construct of the mind—into their diverse specificity, giving space to relational proposals and overlapping temporalities. Each of the three upcoming chapters echoes the ruin in its multiplicity, from the reading of modernity, to the speculative discrepancy of decay and precariousness of turbo-capitalism. <br> <br> This program is set to unfold at The Balcony over the course of the upcoming year. Each chapter is articulated as a trio exhibition. The aim is to bind established artists, with mid-career and recently graduated practitioners from the field.</>");
 
 
   // menu items
@@ -60,16 +78,38 @@ $(document).ready(function(){
     $(this).find('ul').show();
   });
 
-  cIcon.click(function(e){
-    map.flyTo(e.latlng);
-    //unbind and off is to remove the existing click events
-    // console.log(e);
-    // console.log($('.cIcon').html());
-    // console.log($(e).html());
-        // var lat = cIcon.getLatLng().lat;
-        // var lng = cIcon.getLatLng().lng;
-        //
-        // map.flyTo([lat,lng]);
+
+  $('.cTrigger0').click(function(e){
+        var lat = cMarkerll.lat;
+        var lng = cMarkerll.lng;
+        map.flyTo([lat,lng]);
+  });
+  $('.cTrigger1').click(function(e){
+        var lat = mMarkerll.lat;
+        var lng = mMarkerll.lng;
+        map.flyTo([lat,lng]);
+  });
+  $('.cTrigger2').click(function(e){
+        var lat = yMarkerll.lat;
+        var lng = yMarkerll.lng;
+        map.flyTo([lat,lng]);
+  });
+  $('.cTrigger3').click(function(e){
+        var lat = kMarkerll.lat;
+        var lng = kMarkerll.lng;
+        map.flyTo([lat,lng]);
+  });
+  $('.cTrigger4').click(function(e){
+        var lat = myMarkerll.lat;
+        var lng = myMarkerll.lng;
+        map.flyTo([lat,lng]);
+        $(".myIcon").css({
+          'box-shadow': '10px 10px 10px yellow',
+        });
+  });
+
+  $(".thisTxtbox").click(function(){
+    $(".text").addClass("bgColorHl")
   });
 
 });

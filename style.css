@@ -47,11 +47,15 @@ html, body, #map{
   position: fixed;
   width: 656px;
   top:2rem;
+  bottom: 2rem;
   right:2rem;
 
   font-family: 'helvetica neue', sans-serif;
   font-size: 1.1rem;
   color: white;
+}
+.bgColorHl{
+  border: 10px dotted pink;
 }
 
   .text p{
@@ -62,36 +66,47 @@ html, body, #map{
     margin: 1rem;
     font-weight: normal;
   }
+  .text p:nth-child(3), .text p:nth-child(4), .text p:nth-child(5), .text p:nth-child(6), .text p:nth-child(7){
+    color: rgb(154, 255, 222);
+  }
 
 
 
 /* config map ele */
-.marker-scroll{
+.myIcon{
   background-color: rgb(212, 193, 144);
   overflow-y: scroll;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
-.marker-scroll::-webkit-scrollbar {
+.myIcon::-webkit-scrollbar {
   display: none;
 }
-.marker-scroll .img-wrapper{
+.myIcon .img-wrapper{
   width: 100%;
 }
 
-  .marker-scroll img{
+  .myIcon img{
     width: 100%;
   }
-  .marker-scroll .pls-scroll{
+  .myIcon .pls-scroll{
     position: absolute;
     top:0;
     right:0;
     margin: 1rem;
   }
-  .marker-scroll p{
+  .myIcon p{
     font-family: 'helvetica neue', sans-serif;
     font-size: 1.1rem;
     line-height: 1.3rem;
     margin: 1rem 1.5rem 5rem 1.5rem;
     hyphens: auto;
   }
+
+
+/* thistextbox */
+
+.thisTxtbox, .thisToSee{
+  color: lightpink;
+  cursor: pointer;
+}
