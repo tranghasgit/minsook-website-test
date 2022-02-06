@@ -47,7 +47,7 @@ html, body, #map{
   position: fixed;
   width: 656px;
   top:2rem;
-  bottom: 2rem;
+  /* bottom: 2rem; */
   right:2rem;
 
   font-family: 'helvetica neue', sans-serif;
