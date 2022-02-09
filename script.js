@@ -39,11 +39,11 @@ $(document).ready(function(){
       }
   });
 
-  var cIcon = new LeafIcon({iconUrl: 'icon/img-1.png', iconAnchor:[0,0], popupAnchor:  [255, 20], className: 'cIcon'}),
-      mIcon = new LeafIcon({iconUrl: 'icon/img-2.png', iconAnchor:[450,0], popupAnchor:  [-193, 32], className: 'mIcon'}),
-      yIcon = new LeafIcon({iconUrl: 'icon/img-3.png', iconAnchor:[900,0], popupAnchor:  [-642, 20], className: 'yIcon'}),
-      kIcon = new LeafIcon({iconUrl: 'icon/img-4.png', iconAnchor:[1350,0], popupAnchor:  [-1095, 50], className: 'kIcon'}),
-      myIcon = new L.divIcon({iconAnchor:[-520, -5], iconSize:[418, 582], className: 'myIcon'});
+  var cIcon = new LeafIcon({iconUrl: 'icon/img-1.png', iconAnchor:[0,0], popupAnchor:  [255, 20], className: 'cIcon projIcons'}),
+      mIcon = new LeafIcon({iconUrl: 'icon/img-2.png', iconAnchor:[450,0], popupAnchor:  [-193, 32], className: 'mIcon projIcons'}),
+      yIcon = new LeafIcon({iconUrl: 'icon/img-3.png', iconAnchor:[900,0], popupAnchor:  [-642, 20], className: 'yIcon projIcons'}),
+      kIcon = new LeafIcon({iconUrl: 'icon/img-4.png', iconAnchor:[1350,0], popupAnchor:  [-1095, 50], className: 'kIcon projIcons'}),
+      myIcon = new L.divIcon({iconAnchor:[-520, -5], iconSize:[418, 582], className: 'myIcon projIcons'});
 
   var cMarker = L.marker([25, 0], {icon: cIcon}),
       mMarker = L.marker([1000, -850], {icon: mIcon}),
@@ -112,4 +112,13 @@ $(document).ready(function(){
     $(".text").addClass("bgColorHl")
   });
 
+  $(".projIcons").each(function(){
+    $(this).click(function(){
+      $(".sideBar").animate({right: 0});
+    });
+  });
+
+  $(".closeBtn").click(function(){
+    $(".sideBar").animate({right: "-30vw"});
+  });
 });

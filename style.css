@@ -14,9 +14,9 @@ html, body, #map{
 .menu{
   z-index: 999 !important;
   position: fixed;
-  width: 656px;
+  width: 30%;
   top:2rem;
-  left:4rem;
+  left:3rem;
 
   font-family: 'helvetica neue', sans-serif;
   font-size: 1.5rem;
@@ -115,13 +115,52 @@ html, body, #map{
 
 
 /* thistextbox */
-
 .thisTxtbox, .thisToSee{
   color: white;
   cursor: pointer;
   pointer-events:  auto;
 }
 
+/* side bar for info */
+.sideBar{
+  position: absolute;
+  top: 0;
+  right: -30vw;
+  /* right: 0; */
+  bottom: 0;
+  width: 30vw;
+  background-color: rgb(214, 160, 67);
+  z-index: 9999 !important;
+  overflow-y: scroll;
+
+  font-family: 'helvetica neue', sans-serif;
+  font-size: 1rem;
+}
+.sideBar::-webkit-scrollbar {
+  display: none;
+}
+.inTxt{
+  width: 26vw;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  pointer-events:  none;
+  /* background: yellow; */
+  margin: 8vw 2vw 2vw 2vw;
+}
+.inTxt h1,.inTxt h2,.inTxt h3{
+  margin: 0;
+}
+.inTxt p{
+  /* margin: 1rem 0rem 1rem 0rem; */
+}
+.closeBtn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1rem 1vw 1rem 2vw;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 @media only screen and (max-width: 1200px) {
   .text{
