@@ -32,7 +32,7 @@ $(document).ready(function(){
   var LeafIcon = L.Icon.extend({
       options: {
           shadowUrl: 'icon/img-shadow.png',
-          // iconSize:     [328, 492], // size of the icon
+          iconSize:     [328, 492], // size of the icon
           // shadowSize:   [50, 64],
           // iconAnchor:   [22, 94],
           // shadowAnchor: [4, 62],
