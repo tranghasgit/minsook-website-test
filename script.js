@@ -142,9 +142,9 @@ $(document).ready(function(){
     // $(".text").addClass("bgColorHl")
   });
 
-  $(".projIcons, .navProj").each(function(event){
-    event.preventDefault();
-    $(this).click(function(){
+  $(".projIcons, .navProj").each(function(){
+    $(this).click(function(eve){
+      eve.preventDefault();
       $(".sideBar").animate({right: 0});
       if ($(".subSideBar").offset().left < $(window).width()) {
         $(".subSideBar").animate({right: "-30vw"});
@@ -152,9 +152,9 @@ $(document).ready(function(){
     });
   });
 
-  $(".navSubProj").each(function(e){
-    e.preventDefault();
-    $(this).click(function(){
+  $(".navSubProj").each(function(){
+    $(this).click(function(e){
+      e.preventDefault();
       $(".subSideBar").animate({right: 0});
       // $(".sideBar").animate({right: "60vw"});
     });
