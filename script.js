@@ -142,7 +142,8 @@ $(document).ready(function(){
     // $(".text").addClass("bgColorHl")
   });
 
-  $(".projIcons, .navProj").each(function(){
+  $(".projIcons, .navProj").each(function(e){
+    e.preventDefault();
     $(this).click(function(){
       $(".sideBar").animate({right: 0});
       if ($(".subSideBar").offset().left < $(window).width()) {
@@ -151,7 +152,8 @@ $(document).ready(function(){
     });
   });
 
-  $(".navSubProj").each(function(){
+  $(".navSubProj").each(function(e){
+    e.preventDefault();
     $(this).click(function(){
       $(".subSideBar").animate({right: 0});
       // $(".sideBar").animate({right: "60vw"});
