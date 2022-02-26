@@ -8,6 +8,7 @@ html, body, #map{
   background-position: center;
   background-size: 50%;
   background-repeat: no-repeat;
+  overflow: hidden;
 
 }
 
@@ -129,14 +130,37 @@ html, body, #map{
   /* right: 0; */
   bottom: 0;
   width: 30vw;
-  background-color: rgb(214, 160, 67);
+  background-color: rgb(158, 172, 199);
   z-index: 9999 !important;
   overflow-y: scroll;
 
   font-family: 'helvetica neue', sans-serif;
   font-size: 1rem;
 }
-.sideBar::-webkit-scrollbar {
+
+.subSideBar{
+  position: absolute;
+  top: 0;
+  right: -30vw;
+  /* right: 0; */
+  bottom: 0;
+  width: 30vw;
+  background-color: rgb(69, 69, 69);
+  z-index: 9999 !important;
+  overflow-y: scroll;
+
+  font-family: 'helvetica neue', sans-serif;
+  font-size: 1rem;
+}
+
+.sideBar .imgWrapper, .subSideBar .imgWrapper{
+  width: 100%;
+  margin: 3rem 0 3rem 0;
+}
+.sideBar img, .subSideBar img{width: 100%;}
+.caption{font-style: italic; color: white;}
+
+.subSideBar::-webkit-scrollbar, .sideBar::-webkit-scrollbar {
   display: none;
 }
 .inTxt{
@@ -166,4 +190,11 @@ html, body, #map{
   .text{
     font-size: 1rem;
   }
+}
+
+
+/* helper */
+
+.projIcons{
+  box-shadow: 2px 5px 5px;
 }
