@@ -142,8 +142,8 @@ $(document).ready(function(){
     // $(".text").addClass("bgColorHl")
   });
 
-  $(".projIcons, .navProj").each(function(e){
-    e.preventDefault();
+  $(".projIcons, .navProj").each(function(event){
+    event.preventDefault();
     $(this).click(function(){
       $(".sideBar").animate({right: 0});
       if ($(".subSideBar").offset().left < $(window).width()) {
